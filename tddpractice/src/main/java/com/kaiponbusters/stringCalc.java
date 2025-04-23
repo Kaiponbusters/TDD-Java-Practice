@@ -15,8 +15,9 @@ public class stringCalc {
                                                     .mapToInt(Integer::parseInt)
                                                     .toArray();
 
+        int limitArgumentValue = 0;
         boolean hasNegativeNumbers = Arrays.stream(numbersIntSeparate)
-                                           .anyMatch(n -> n < 0);
+                                           .anyMatch(n -> n < limitArgumentValue);
 
         if(hasNegativeNumbers) {
             throw new IllegalArgumentException("負の数は対応していません");
